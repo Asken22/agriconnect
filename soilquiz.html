@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+  body{
+    position: relative;
+    margin:0px;
+    padding:0px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+  }
+  ul{
+    list-style-type:none;
+  }
+  #title{
+    position:absolute;
+    top:2vh;
+    left:39vw;
+    font-family: 'Playfair Display', serif;
+    color: #fbbf24;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  .loginbox{
+    position:relative;
+    top:35vh;
+    bottom:33vh;
+    left:34vw;
+    right:34vw;
+    height:35vh;
+    width:32vw;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.9) 0%, rgba(5, 150, 105, 0.9) 100%);
+    display: block;
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .loginbox:hover{
+    box-shadow: 0 0 20px 8px rgba(16, 185, 129, 0.8);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+  #loginheader{
+    position:absolute;
+    top:1vh;
+    left:100px;
+    color: #ffffff;
+    font-weight: 600;
+  }
+  #usernameDiv{
+    position:absolute;
+    top:10vh;
+    left:100px;
+  }
+  #username label{
+    position:absolute;
+    top:5vh;
+    left:0px;
+    font-size: larger;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  #username{
+    font-family: 'Poppins', sans-serif;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    font-size: 14px;
+  }
+  #startheader{
+    position:absolute;
+    top:15vh;
+    left:90px;
+    color: #fbbf24;
+    font-weight: 700;
+  }
+  #startbutton{
+    position:absolute;
+    top:24vh;
+    left:190px;
+    padding:10px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1e3c72;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+    font-family: 'Poppins', sans-serif;
+  }
+  #startbutton:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.6);
+    transition: all 0.3s ease;
+  }
+  .question1{
+    display: none;
+    top:15vh;
+    position:absolute;
+  }
+  .question1 h3, .question2 h3, .question3 h3, .question4 h3, .question5 h3{
+    color: #fbbf24;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  .question1 label, .question2 label, .question3 label, .question4 label, .question5 label{
+    color: #e5e7eb;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+  }
+  .question2{
+    display:none;
+    top: 39vh;
+    position:absolute
+  }
+  .question3{
+    display:none;
+    position:absolute;
+    top:63vh;
+  }
+  .question4{
+    display:none;
+    position:absolute;
+    top:87vh;
+  }
+  .question5{
+    display:none;
+    position:absolute;
+    top:111vh;
+  }
+  #FinalButton{
+    position:absolute;
+    top:135vh;
+    left:45vw;
+    padding:10px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1e3c72;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+    font-family: 'Poppins', sans-serif;
+  }
+  #FinalButton:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.6);
+    transition: all 0.3s ease;
+  }
+  .certificate {
+        position:absolute;
+        width: 60%;
+        height:60vh;
+        margin: 50px auto;
+        padding: 20px;
+        border: 5px solid #10b981;
+        border-radius: 15px;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+        left:20vw;
+        top:10vh;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        color: #1e3c72;
+    }
+  #certificateBox h2{
+    color: #fbbf24;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+  .certificate h3{
+    font-family: 'Playfair Display', serif;
+    color: #1e3c72;
+  }
+  #textC{
+      position:absolute;
+      font-size: 1.2em;
+      margin: 20px 0;
+      top:20vh;
+      color: #374151;
+      font-family: 'Poppins', sans-serif;
+    }
+  #tagC{
+     position:absolute;
+     bottom:5vh;
+     left:19vw;
+     font-size: 1.5em;
+     color: #10b981;
+     font-family: 'Playfair Display', serif;
+    }
+  #paraC{
+      position:absolute;
+      top:40vh;
+      font-size: 1em;
+      line-height: 1.5;
+      color: #4b5563;
+      font-family: 'Poppins', sans-serif;
+    }
+  #scoreC{
+     position:absolute;
+     top:32vh;
+     font-size: 1.2em;
+     font-weight: bold;
+     color: #7e22ce;
+     font-family: 'Poppins', sans-serif;
+    }
+  #downloadBtn{
+    position:absolute;
+    top:85vh;
+    left:45vw;
+    padding:10px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1e3c72;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
+<body>
+    <header>
+        <h1 id="title">SOIL HEALTH QUIZ</h1>
+    </header>
+    <div class="loginbox">
+      <table>
+        <div class="logindetails">
+          <h2 id="loginheader">Please log in to take the quiz</h2>
+          <div id="usernameDiv">
+           <label for="username">Username:</label>
+           <input type="text" id="username" name="username" placeholder="Enter your name" required><br><br>
+          </div>
+          <h2 id="startheader" >ARE YOU READY TO GO?</h2>
+          <input type="submit" onclick="TakeQuiz()" id="startbutton">
+        </div>
+      </table>
+
+    </div>
+    <div class="question1">
+      <table>
+          <ul>
+              <li>
+                <h3>1. What is the primary benefit of cover crops for soil health in a sustainable farming system?</h3>
+              </li>
+              <li>
+                <input type="radio" id="option 1_1" >
+                <label for="option 1_1">They increase the soil's salinity.</label>
+              </li>
+              <li>
+                <input type="radio" id="option 1_2">
+                <label for="option 1_2">They protect the soil from erosion and add organic matter.</label>
+              </li>
+              <li>
+                <input type="radio" id="option 1_3" >
+                <label for="option 1_3">They compete with cash crops for nutrients.</label>
+              </li>
+              <li>
+                <input type="radio" id="option 1_4">
+                <label for="option 1_4">They reduce the need for irrigation by using up soil moisture.</label>
+              </li>
+          </ul>
+
+      </table>
+    </div>
+    <div class="question2">
+        <table>
+            <ul>
+                <h3>2. Which of the following is an example of minimizing soil disturbance, a key principle of soil health?</h3>
+            
+                <input type="radio" id="option 2_1" >
+                <label for="option 2_1">Conventional tillage</label>
+              </li>
+              <li>
+                <input type="radio" id="option 2_2" >
+                <label for="option 2_2">Moldboard plowing</label>
+              </li>
+              <li>
+                <input type="radio" id="option 2_3">
+                <label for="option 2.3">Intensive grazing</label>
+              </li>
+              <li>
+                <input type="radio" id="option 2_4">
+                <label for="option 2_4">No-till farming</label>
+              </li>
+            </ul>
+        </table>
+    </div>
+    <div class="question3">
+        <table>
+            <ul>
+                <h3>3. What role do soil microorganisms play in maintaining soil health?</h3>
+              <li>
+                <input type="radio" id="option 3_1">
+                <label for="option 3_1">They deplete soil nutrients.</label>
+              </li>
+              <li>
+                <input type="radio" id="option 3_2">
+                <label for="option 3_2">They break down organic matter and enhance nutrient cycling.</label>
+              </li>
+              <li>
+                <input type="radio" id="option 3_3" >
+                <label for="option 3_3">They increase soil compaction.</label>
+              </li>
+              <li>
+                <input type="radio" id="option 3_4" >
+                <label for="option 3_4">They reduce water infiltration.</label>
+              </li>
+            </ul>
+        </table>
+    </div>
+    <div class="question4">
+        <table>
+            <ul>
+                <h3>4. Which practice helps improve soil structure and promotes healthy root growth?</h3>
+              <li>
+                <input type="radio" id="option 4_1">
+                <label for="option 4_1">Compaction</label>
+              </li>
+              <li>
+                <input type="radio" id="option 4_2">
+                <label for="option 4_2">Monocropping</label>
+              </li>
+              <li>
+                <input type="radio" id="option 4_3">
+                <label for="option 4_3">Adding organic matter like compost</label>
+              </li>
+              <li>
+                <input type="radio" id="option 4_4">
+                <label for="option 4_4">Excessive pesticide use</label>
+              </li>
+            </ul>
+        </table>
+    </div>
+    <div class="question5">
+        <table>
+            <ul>
+               <h3>5. Why is organic matter (humus) important for soil health?</h3>
+               <li>
+                <input type="radio" id="option 5_1" >
+                <label for="option 4_5"> It creates large pore spaces for water and air to escape. </label>
+               </li>
+               <li>
+                <input type="radio" id="option 5_2" >
+                <label for="option 5_2">It is primarily composed of inorganic minerals. </label>
+               </li>
+               <li>
+                <input type="radio" id="option 5_3">
+                <label for="option 5_3">It provides nutrients for plants and improves soil structure </label>
+               </li>
+               <li>
+                <input type="radio" id="option 5_4" >
+                <label for="option 5_4"> It has a high pH, making the soil acidic.</label>
+               </li>
+            </ul>
+        </table>
+    </div>
+    <div>
+      <button id="FinalButton" style="display:none;">SUBMIT QUIZ</button>"
+    </div>
+    <div id="Certificate" style="display:none;"></div>
+</body>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+<script>
+  function TakeQuiz(){ 
+    const usernameInput = document.getElementById("username").value;
+    if(usernameInput===""){
+      alert("Please enter your name to proceed.");
+      return;
+    }
+    else{
+      alert("Welcome " + usernameInput + "! Best of luck for the quiz.");
+    }
+    document.querySelector(".loginbox").style.display="none";
+    document.querySelector(".question1").style.display="block";
+    document.querySelector(".question2").style.display="block";
+    document.querySelector(".question3").style.display="block";
+    document.querySelector(".question4").style.display="block";
+    document.querySelector(".question5").style.display="block";
+    document.getElementById("FinalButton").style.display="block";
+  }
+    quiz=0;
+    document.getElementById("FinalButton").onclick=function(){
+      //Question 1
+      if(document.getElementById("option 1_2").checked){
+        quiz++;
+      }
+      //Question 2
+      if(document.getElementById("option 2_4").checked){
+        quiz++;
+      }
+      //Question 3
+      if(document.getElementById("option 3_2").checked){
+        quiz++;
+      }
+      //Question 4
+      if(document.getElementById("option 4_3").checked){
+        quiz++;
+      }
+      //Question 5
+      if(document.getElementById("option 5_3").checked){
+        quiz++;
+      }
+        document.querySelector(".question1").style.display="none";
+        document.querySelector(".question2").style.display="none";
+        document.querySelector(".question3").style.display="none";
+        document.querySelector(".question4").style.display="none";
+        document.querySelector(".question5").style.display="none";
+        document.querySelector(".loginbox").style.display="none";
+        document.getElementById("FinalButton").style.display="none";
+        document.getElementById("Certificate").style.display="block";
+       
+        const username = document.getElementById("username").value;
+
+        document.getElementById("Certificate").innerHTML=`
+         <div id="certificateBox" >
+           <h2>🎉 Congratulations, ${username}! 🎉</h2>
+           <div class="certificate">
+             <h3 style="text-align: center;font-size: xx-large;">Certificate of Participation</h3>
+             <p id="textC">     This is to certify that <strong>${username}</strong> has successfully participated in the Online Quiz.
+              Presented on ${new Date().toLocaleDateString()}</p>
+             <p id="scoreC">Score: ${quiz}/5</p>
+             <p id="paraC">This event was organized to raise awareness about the importance of healthy soil and commit to its conservation for a sustainable future . We appreciate their valuable contribution and dedication to learning about this vital resource.</p>
+             <h1 id="tagC"><b>"Healthy Soil, Healthy Future"</b></h1>
+           </div>
+         </div>`;
+         
+    }
+
+
+  // async function downloadCertificate() {
+  //   const certificate = document.getElementById('certificateBox');
+
+
+  //   // Capture the certificate div as an image
+  //   const canvas = await html2canvas(certificate);
+  //   const imgData = canvas.toDataURL('image/png');
+
+  //   // Create a new PDF
+  //   const { jsPDF } = window.jspdf;
+  //   const pdf = new jsPDF('p', 'mm', 'a4');
+
+  //   const imgWidth = 180;
+  //   const pageWidth = pdf.internal.pageSize.getWidth();
+  //   const xOffset = (pageWidth - imgWidth) / 2;
+  //   const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+  //   pdf.addImage(imgData, 'PNG', xOffset, 30, imgWidth, imgHeight);
+  //   pdf.save(`${username}_Certificate.pdf`);
+  // }
+    
+
+</script>
+</html>
